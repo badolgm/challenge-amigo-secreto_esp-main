@@ -3,17 +3,17 @@
 ![Amigo Secreto](assets/amigo-secreto.png)
 
 ##Tópicos
-- [Descripción](#descripción)
-- [Características](#características)
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Dependencias](#dependencias)
-- [Contribuciones](#contribuciones)
-- [Problemas Conocidos y Soluciones](#problemas-conocidos-y-soluciones)
-- [Licencia](#licencia)
-- [Agradecimientos](#agradecimientos)
-- [Contacto](#contacto)
+- [Descripción](#Descripción)
+- [Características](#Características)
+- [Instalación](#Instalación)
+- [Uso](#Uso)
+- [Estructura del Proyecto](#Estructura del Proyecto)
+- [Dependencias](#Dependencias)
+- [Contribuciones](#Contribuciones)
+- [Problemas Conocidos y Soluciones](#Problemas Conocidos y Soluciones)
+- [Licencia](#Licencia)
+- [Agradecimientos](#Agradecimientos)
+- [Contacto](#Contacto)
 
 
 
