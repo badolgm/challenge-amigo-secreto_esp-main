@@ -87,7 +87,7 @@ Duplicados: La validación impide agregar nombres repetidos; ignora esta alerta 
 Para reportar otros problemas, crea un issue en el repositorio.
 
 ## Licencia
-Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo LICENSE (si lo agregas) o considera añadirlo para mayor claridad.
+Este proyecto se distribuye bajo la licencia MIT.
 
 ## Agradecimientos
 
