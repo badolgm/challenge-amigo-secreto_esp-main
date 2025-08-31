@@ -87,7 +87,10 @@ Duplicados: La validación impide agregar nombres repetidos; ignora esta alerta 
 Para reportar otros problemas, crea un issue en el repositorio.
 
 ## Licencia
-Este proyecto se distribuye bajo la licencia MIT.
+
+Este proyecto está bajo la licencia [MIT](./LICENSE).  
+Eres libre de usar, modificar y distribuir este software, siempre que se mantenga el aviso de copyright y la misma licencia en las copias.
+
 
 ## Agradecimientos
 
