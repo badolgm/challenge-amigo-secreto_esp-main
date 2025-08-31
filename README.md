@@ -55,13 +55,14 @@ Los nombres y el resultado se muestran dinámicamente en la página.
 
 
 ## Estructura del Proyecto
+```
 challenge-amigo-secreto_esp-main/
 ├── index.html         # Estructura y contenido de la página
 ├── app.js            # Lógica de programación (JavaScript)
 ├── style.css         # Estilos prediseñados
 ├── assets/           # Imágenes y recursos (amigo-secreto.png, play_circle_outline.png)
 └── README.md         # Este archivo
-
+```
 
 ## Dependencias
 
