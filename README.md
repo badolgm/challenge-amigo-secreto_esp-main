@@ -1,106 +1,198 @@
-# Challenge Amigo Secreto
+# 🎁 Challenge · Amigo Secreto (Alura One)
 
-![Amigo Secreto](assets/amigo-secreto.png)
+[![Alura One](https://img.shields.io/badge/Alura-Oficial-blue?style=for-the-badge&logo=alura)](https://www.aluracursos.com/) [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](./LICENSE) [![Stack: HTML·CSS·JS](https://img.shields.io/badge/Stack-HTML%20%7C%20CSS%20%7C%20JS-yellow?style=for-the-badge&logo=javascript)](https://developer.mozilla.org/)
 
-## Tópicos
-- [Descripción](#descripción)
-- [Características](#características)
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Dependencias](#dependencias)
-- [Contribuciones](#contribuciones)
-- [Problemas Conocidos y Soluciones](#problemas-conocidos-y-soluciones)
-- [Licencia](#licencia)
-- [Agradecimientos](#agradecimientos)
+<p align="center">
+  <img src="./assets/amigo-secreto.png" alt="Amigo Secreto" width="520" />
+</p>
+
+---
+
+## 🔥 Resumen rápido
+**Challenge Amigo Secreto** es un ejercicio práctico del programa **Alura One** para aprender lógica, eventos y manipulación del DOM en JavaScript. Permite agregar nombres, validar duplicados, y realizar un sorteo aleatorio. Incluye un atajo para añadir nombres pulsando **Enter** (sin usar mouse).
+
+---
+
+## 📚 Índice
+- [Características](#características)  
+- [Demo / Vista rápida](#demo--vista-rápida)  
+- [Instalación](#instalación)  
+- [Uso](#uso)  
+- [Atajo — Añadir con Enter](#atajo--añadir-con-enter)  
+- [Explicación del código (app.js)](#explicación-del-código-appjs)  
+- [Estructura del proyecto](#estructura-del-proyecto)  
+- [Accesibilidad y buenas prácticas](#accesibilidad-y-buenas-prácticas)  
+- [Problemas comunes y soluciones](#problemas-comunes-y-soluciones)  
+- [Contribuciones](#contribuciones)  
+- [Licencia](#licencia)  
 - [Contacto](#contacto)
 
+---
 
-¡Bienvenido al proyecto "Challenge Amigo Secreto"! Este es un ejercicio educativo diseñado para practicar conceptos fundamentales de lógica de programación utilizando HTML, CSS y JavaScript. La aplicación permite a los usuarios agregar nombres de amigos a una lista y realizar un sorteo aleatorio para seleccionar un "amigo secreto". Perfecto para aprender variables, condicionales, funciones y manipulación del DOM.
+## ✨ Características
+- ➕ Añadir nombres a la lista (validación: no vacío, no duplicados).  
+- ⌨️ Atajo para añadir con la tecla **Enter**.  
+- 🎲 Sortear un **amigo secreto** aleatoriamente.  
+- 📱 Interfaz responsive y accesible (`aria-live` para resultados).  
+- 🔧 Sin dependencias externas — funciona en cualquier navegador moderno.
 
-## Descripción
+---
 
-Este proyecto forma parte de un desafío de Alura One, enfocado en reforzar habilidades de desarrollo web. La interfaz está prediseñada con HTML y CSS, mientras que la lógica se implementa en JavaScript. Es una herramienta sencilla pero efectiva para organizar un juego de amigo secreto de manera interactiva.
+## 📷 Demo / Vista rápida
+> Abrir `index.html` en tu navegador.  
+> La UI: campo de texto para añadir nombres, botón **Añadir**, lista de nombres y botón **Sortear amigo** con ícono.
 
-## Características
+*(Si quieres, añade capturas en `assets/` y colócalas aquí con `![demo](./assets/demo.png)`.)*
 
-Agregar nombres: Se Ingresa nombres de amigos y son añádidos  a una lista visible.
-Validación: Alerta si el campo está vacío o si el nombre ya existe.
-Sorteo aleatorio: Selecciona un amigo secreto de forma aleatoria desde la lista.
-Interfaz amigable: Diseño limpio y responsive adaptado a cualquier dispositivo.
+---
 
-
-## Instalación
-
-Clona el repositorio:
-Abre una terminal y ejecuta:git clone https://github.com/badolgm/challenge-amigo-secreto_esp-main.git
-
-
-Navega al directorio:
-Usa:  cd challenge-amigo-secreto_esp-main
-
-
-No requiere dependencias externas: Solo necesitas un navegador moderno (Chrome, Firefox, Edge).
-Abre el proyecto:
-Haga doble clic en index.html o ábralo desde un servidor local (e.g., Live Server en VS Code) para una experiencia optimizada.
-
-
-## Uso
-
-Ingresa un nombre en el campo de texto "Escribe un nombre".
-Haz clic en "Añadir" para agregar el nombre a la lista.
-Repite el proceso para agregar más amigos.
-Haz clic en "Sortear amigo" para ver el resultado aleatorio.
-Los nombres y el resultado se muestran dinámicamente en la página.
-
-
-## Estructura del Proyecto
+## ⚙️ Instalación
 ```
+
+# Clonar el repositorio
+git clone https://github.com/badolgm/challenge-amigo-secreto_esp-main.git
+cd challenge-amigo-secreto_esp-main
+
+# Abrir index.html (doble clic) o usar Live Server en VS Code para mejor experiencia
+▶️ Uso
+Escribe el nombre en el campo "Escribe un nombre".
+
+Pulsa Enter o haz clic en Añadir.
+
+Los nombres aparecerán en la lista.
+
+Cuando quieras, pulsa el botón Sortear amigo para obtener el resultado (aparecerá en la sección de resultados).
+
+⌨️ Atajo — Añadir con la tecla Enter
+Añade este fragmento al final de tu app.js (si aún no lo tienes). No cambia nada visual ni el CSS:
+
+javascript
+Copiar código
+// --- Habilitar "Enter" para añadir amigo ---
+const inputAmigo = document.getElementById('amigo');
+if (inputAmigo) {
+  inputAmigo.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+      event.preventDefault(); // evita comportamiento por defecto
+      agregarAmigo();         // llama a la función existente que añade el nombre
+      inputAmigo.focus();     // mantiene el cursor listo para el siguiente nombre
+    }
+  });
+}
+Breve explicación: escuchamos la tecla Enter en el input con id amigo. Si se presiona, prevenimos el comportamiento por defecto (evitar submit/refresh), llamamos a agregarAmigo() y dejamos el foco en el campo.
+
+🧩 Explicación del código (app.js) — flujo y funciones clave
+A continuación se explica el patrón común usado en este tipo de proyecto. Ajusta nombres si en tu archivo existen variaciones.
+
+Flujo de datos
+El usuario escribe un nombre → input #amigo.
+
+Al pulsar Añadir o Enter, se valida y se empuja el nombre a un array amigos.
+
+Se actualiza la vista (renderLista()), mostrando la lista actualizada.
+
+Al pulsar Sortear amigo, se calcula un índice aleatorio y se muestra el resultado (en #resultado o con alert).
+
+Funciones habituales
+let amigos = [];
+Array donde se guardan los nombres.
+
+function agregarAmigo()
+
+Lee document.getElementById('amigo').value.trim().
+
+Valida (no vacío, no duplicado).
+
+Si pasa, hace amigos.push(nombre) y llama a renderLista() y limpia input.
+
+Muestra mensajes de alerta o toast según corresponda.
+
+function renderLista()
+
+Toma amigos y renderiza <li> dentro de #listaAmigos.
+
+Actualiza conteos y atributos ARIA si procede.
+
+function sortearAmigo()
+
+Si amigos.length === 0, alerta y sale.
+
+Genera índice: const idx = Math.floor(Math.random() * amigos.length);
+
+Resultado: const ganador = amigos[idx];
+
+Muestra ganador en #resultado (o alert) y opcionalmente lo elimina o marca como asignado.
+
+function limpiarInput()
+
+input.value = '' y input.focus().
+
+Buenas prácticas en el archivo JS
+Mantén todas las referencias por id y evita onclick inline.
+
+Centraliza las validaciones (útil si más adelante añades edición/eliminación).
+
+Si quieres, convierte alert/prompt por modales HTML para mejor UX.
+
+📂 Estructura del proyecto
+
+
+
+---
 challenge-amigo-secreto_esp-main/
-├── index.html         # Estructura y contenido de la página
-├── app.js            # Lógica de programación (JavaScript)
-├── style.css         # Estilos prediseñados
-├── assets/           # Imágenes y recursos (amigo-secreto.png, play_circle_outline.png)
-└── README.md         # Este archivo
-```
+├── index.html         # Interfaz (HTML)
+├── app.js             # Lógica JS (agregar, validar, sortear)
+├── style.css          # Estilos del proyecto (no modificar por ahora)
+├── assets/
+│   ├── amigo-secreto.png
+│   └── play_circle_outline.png
+└── README.md
 
-## Dependencias
+---
 
-Google Fonts: Fuentes Inter y Merriweather cargadas vía CDN.
-No se requieren bibliotecas adicionales ni paquetes NPM.
+♿ Accesibilidad y buenas prácticas
+Usa alt descriptivos en imágenes (alt="Imagen representativa de Amigo Secreto").
+
+Usa aria-live="polite" en el contenedor donde aparece el resultado para que los lectores de pantalla anuncien cambios.
+
+Asegura contraste de color en botones y texto (tu style.css ya cuida esto).
+
+Mantén el foco en el campo tras añadir un nombre (input.focus()).
+
+🐞 Problemas comunes y soluciones
+Problema: No se añade nombre al presionar Enter.
+Solución: Asegúrate de que el snippet del atajo esté agregado y que el id del input sea amigo.
+
+Problema: Nombres duplicados aparecen.
+Solución: La función agregarAmigo() debe comprobar if (amigos.includes(nombre)) y mostrar mensaje.
+
+Problema: Sortear con lista vacía.
+Solución: if (amigos.length === 0) { alert('Agrega al menos un nombre'); return; }
+
+🤝 Contribuciones
+Quieres mejorar el reto:
+
+Fork del repo.
+
+Crear branch: git checkout -b feature/tu-mejora.
+
+Commit claro: git commit -m "feat: mejora X".
+
+Push y abre PR describiendo los cambios.
+
+Guía rápida para mantener tu copia local:
 
 
-##Contribuciones
-¡Este proyecto está abierto a mejoras! Si deseas contribuir:
+git add .
+git commit -m "Tu mensaje"
+git push origin main
+📜 Licencia
+Este proyecto se publica bajo MIT License. Ver archivo LICENSE para texto completo.
 
-Haz un fork del repositorio.
-Crea una rama (git checkout -b feature/nueva-funcionalidad).
-Comitea tus cambios (git commit -m "Descripción del cambio").
-Haz push a tu rama (git push origin feature/nueva-funcionalidad).
-Abre un Pull Request en GitHub.
+✉️ Contacto
+Autor: Bernardo Gómez (badolfogm)
 
+Email: badolfogm@gmail.com
 
-## Problemas Conocidos y Soluciones
+Repo: https://github.com/badolgm/challenge-amigo-secreto_esp-main
 
-Alerta de lista vacía: Si intentas sortear sin amigos, aparecerá una alerta. Asegúrate de agregar al menos un nombre.
-Duplicados: La validación impide agregar nombres repetidos; ignora esta alerta si es intencional.
-
-Para reportar otros problemas, crea un issue en el repositorio.
-
-## Licencia
-
-Este proyecto está bajo la licencia [MIT](./LICENSE).  
-Eres libre de usar, modificar y distribuir este software, siempre que se mantenga el aviso de copyright y la misma licencia en las copias.
-
-
-## Agradecimientos
-
-Gracias a Alura One por el desafío y los recursos proporcionados.
-Inspirado en la comunidad de aprendizaje y desarrollo web.
-
-
-## Contacto
-
-Autor: Bernardo Gómez 
-Correo: badolfogm@gmail.com 
-¿Dudas? Abre un issue o contáctame directamente.
