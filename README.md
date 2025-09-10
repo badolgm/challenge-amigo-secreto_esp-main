@@ -1,6 +1,6 @@
 # 🎁 Challenge · Amigo Secreto (Alura One)
 
-![Alura One License: MIT](https://img.shields.io/badge/License-MIT-green.svg) ![Stack: HTML·CSS·JS](https://img.shields.io/badge/Stack-HTML%C2%B7CSS%C2%B7JS-blue.svg)
+[![Alura One](https://img.shields.io/badge/Alura%20One-Challenge-blue.svg)](https://www.aluracursos.com/challenges/oracle-one) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) [![Stack: HTML·CSS·JS](https://img.shields.io/badge/Stack-HTML%C2%B7CSS%C2%B7JS-orange.svg)](https://developer.mozilla.org/es/)
 
 ## 🔥 Resumen rápido
 
@@ -31,10 +31,12 @@ Challenge Amigo Secreto es un ejercicio práctico del programa Alura One para ap
 
 ## 📷 Demo / Vista rápida
 
+![Amigo Secreto Demo](./assets/amigo-secreto.png)
+
 1. Abrir `index.html` en tu navegador
 2. La UI: campo de texto para añadir nombres, botón Añadir, lista de nombres y botón Sortear amigo con ícono
 
-> 💡 **Tip:** Si quieres, añade capturas en `assets/` y colócalas aquí con `![demo](./assets/demo.png)`
+> 💡 **Tip:** Puedes añadir más capturas de pantalla en `assets/` para mostrar el funcionamiento
 
 ## ⚙️ Instalación
 
