@@ -40,3 +40,15 @@ function sortearAmigo() {
     li.textContent = `¡Tu amigo secreto es: ${amigoSecreto}!`;
     resultado.appendChild(li);
 }
+
+// --- Habilitar "Enter" para añadir amigo ---
+const inputAmigo = document.getElementById('amigo');
+if (inputAmigo) {
+  inputAmigo.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+      event.preventDefault(); // evita comportamiento por defecto
+      agregarAmigo();         // llama a la función existente que añade el nombre
+      inputAmigo.focus();     // mantiene el cursor listo para el siguiente nombre
+    }
+  });
+}
